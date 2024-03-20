@@ -1,0 +1,14 @@
+#colusn{
+    display: flex;
+    gap: 20px;
+    border: 2px solid #D2D2D2;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.item{
+    background-color:#D2D2D2;
+    height: 100px;
+
+}

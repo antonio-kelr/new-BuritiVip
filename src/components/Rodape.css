@@ -1,0 +1,95 @@
+#footer {
+    background-image: url('../img/desig-rodaPe.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    padding-left: 10px;
+}
+
+.nav_footer {
+    padding-top: 10px;
+
+
+
+
+    & ul {
+        display: flex;
+        list-style: none;
+        gap: 20px;
+        font-weight: 600;
+        padding-left: 0;
+    }
+
+    & li {
+        cursor: pointer;
+
+    }
+
+
+}
+
+#logo_rodape {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+
+}
+
+#navFooter {
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+
+.text_rodape {
+    max-width: 700px;
+}
+
+@media screen and (max-width: 997px) {
+    .nav_footer {
+        padding-top: 10px;
+        display: flex;
+        flex-wrap: wrap;
+
+
+
+
+        & ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+            font-weight: 600;
+            padding-left: 0;
+            display: flex;
+            flex-wrap: wrap;
+
+        }
+
+        & li {
+            cursor: pointer;
+
+        }
+
+
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+
+    #logo_rodape {
+        padding-top: 20px;
+        display: flex;
+        align-items:baseline;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+
+
+
+}
+

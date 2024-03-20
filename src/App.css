@@ -1,42 +1,477 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+* {
+    font-family: sans-serif;
+  
   }
-  to {
-    transform: rotate(360deg);
+  
+  #img_header {
+    position: relative;
+  
+  
+  
+  
+    & img {
+      width: 100%;
+      height: 300px;
+    }
   }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+  
+  .div-mobile{
+    position: absolute;
+    z-index: 100;
+    height: 100%;
+    top: 0%;
+    width: 00%;
+    overflow: hidden;
+    background-color: #2E2B72;
+    transition: 0.3s;
+  
   }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
+  .abri-menu{
+    width: 70%;
+    overflow: visible;
+    transition: 0.3s;
+  }
+  .Xmark{
+    font-size: 25px;
+    color: #E31C80;
+    right: 20px;
+    top: 15px;
+    position: absolute;
+    
+    
+  }
+  
+  #nav_mobile{
+    height: 100%;
+    padding-top: 100px;
+  
+  
+  }
+  
+  #nav_mobile ul {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    list-style: none;
+    height: 100%;
+    padding-left: 0px;
+    position: relative;
+  
+  
+    & li {
+      padding: 5px;
+      padding-left: 24px;
+    }
+    & li:hover {
+       background-color: #E31C80;
+    }
+  
+  
+    & a {
+      color: white;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      text-decoration: none;
+    }
+  }
+  #nav_mobile ul::before {
+    content: "";
+    height: 100%;
+    width: 14px;
+    position: absolute;
+    left: 0;
+    background-color: #E31C80;
+  }
+  
+  
+  
+  
+  #container {
+    position: absolute;
+    left: 45%;
+    top: 6%;
+    transform: translate(-45%, -45%);
+    padding: 0;
+  
+  }
+  
+  #contNet {
+    margin-top: -159px;
+  }
+  
+  #conteir {
+    border: 2px solid red;
+  }
+  
+  #min_nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+  
+  }
+  
+  .about {
+    display: flex;
+    gap: 1rem;
+    margin-left: 300px;
+    color: #ff8b00;
+  
+  }
+  
+  #img_min_nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  
+  
+  }
+  
+  #imagem {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  
+  
+  }
+  
+  #img_min_nav .img {
+  
+    & img {
+      width: 25px;
+      height: 25px;
+  
+    }
+  }
+  
+  .imgTwiter {
+    width: 25px;
+    height: 25px;
+    background-color: #44AED5;
+    text-align: center;
+  
+    & i {
+      color: white;
+    }
+  
+  }
+  
+  #min_Buriti {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  
+  
+  
+  
+    & div:nth-child(1) {
+      width: 7px;
+  
+      & img {
+        width: 100%;
+      }
+    }
+  
+    & div:nth-of-type(2) {
+      background-color: #ECEEF5;
+      padding: 5px;
+      padding-top: 0px;
+      padding-bottom: 0;
+      border: 2px solid #CAD4E7;
+  
+  
+    }
+  
+    & h3 {
+      font-size: 17px;
+      font-weight: bolder;
+      color: #3D5997;
+      padding-top: 10px;
+  
+  
+      & span {
+        font-weight: 400;
+      }
+  
+    }
+  
+    & button {
+      padding: 0px 10px 0px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      background-color: #ECEEF5;
+      border: 2px solid #CAD4E7;
+      border-radius: 5px;
+      color: #365899;
+  
+  
+      & i {
+        padding-bottom: 5px;
+  
+      }
+    }
+  }
+  
+  
+  #logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    padding-top: 7px;
+  
+    & span:nth-child(2) {
+      color: #ff8b00;
+      font-size: 25px;
+  
+    }
+  
+    & img {
+      margin-top: -20px;
+    }
+  
+  }
+  
+  #button-usename {
+    height: 35px;
+    width: 400px;
+  
+  
+    & input,
+    span {
+      background-color: #E8E8E8;
+      box-shadow: none;
+      border: none;
+  
+    }
+  
+    & button {
+      border: none;
+      background: #505050;
+      color: #B5B5B5;
+      font-size: 14px;
+      padding: 15px;
+      padding-top: 0;
+      padding-bottom: 0;
+  
+    }
+  
+  }
+  
+  #nav-bar {
+    position: absolute;
+    top: 10.5%;
+    right: 12px;
+    width: 100%;
+  
+  }
+  
+  #nav_uls {
+    background: #302F78;
+    display: flex;
+    width: 100%;
+  
+  
+  
+    & ul {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      height: 100%;
+      gap: 20px;
+      padding-left: 0px;
+      padding-top: 5px;
+  
+  
+  
+      & a {
+        text-decoration: none;
+        color: white;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+  
+      & li {
+        padding: 0px 10px;
+      }
+  
+  
+  
+    }
+  
+  }
+  
+  #navs {
+    padding: 0;
+    display: flex;
+  
+  }
+  
+  #nav_uls li:hover {
+    background: #E31C80;
+  
+  }
+  
+  #nav_uls li {
+    height: 100%;
+    text-align: center;
+    align-items: center;
+    display: flex;
+  }
+  
+  #nav_uls ul {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+  
+  }
+  
+  #nav_uls ul::before {
+    content: "";
+    height: 8px;
+    background: #E31C80;
+    width: 100%;
+    top: 0;
+    position: absolute;
+    left: 0;
+  
+  }
+  
+  #bars {
+    display: none;
+  }
+  
+  
+  @media screen and (max-width: 1200px) {
+    #min_nav {
+      padding-top: 10px;
+    }
+  
+    .about {
+      margin-left: 20%;
+    }
+  
+    #img_min_nav {
+      gap: 5px;
+  
+  
+    }
+  
+    #img_min_nav .img {
+  
+      & img {
+        width: 24px;
+  
+      }
+    }
+  
+    .imgTwiter {
+      width: 24px;
+  
+    }
+  
+    #min_Buriti {
+      gap: 5px;
+  
+      & div:nth-child(1) {
+        width: 7px;
+  
+        & img {
+          width: 90%;
+        }
+      }
+  
+      & div:nth-of-type(2) {
+        padding: 0px;
+        padding-right: 3px;
+        padding-left: 3px;
+  
+  
+      }
+  
+  
+      & button {
+        padding: 0px 8px 0px;
+  
+  
+      }
+    }
+  
+    #logo {
+      & span:nth-child(2) {
+        font-size: 18px;
+  
+      }
+  
+    }
+  
+    #nav_uls li a {
+      font-size: 11px;
+  
+  
+    }
+  
+    #contNet {
+      margin-top: -163px;
+    }
+  
+  
+  
+  }
+  
+  @media screen and (max-width: 997px) {
+    #logo {
+      & span:nth-child(2) {
+        display: none;
+  
+      }
+  
+    }
+  
+    #nav-bar {
+      display: none;
+    }
+  
+    #contNet {
+      margin-top: -160px;
+    }
+  
+    #button-usename {
+      display: none;
+    }
+  
+    #bars {
+      display: block;
+      font-size: 25px;
+      z-index: 89;
+    }
+  
+    .logo_Buriti {
+      padding-right: 10px;
+  
+    }
+    #min_nav{
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .about {
+      margin-left: 0%;
+    }
+  
+  
+  }
+  @media screen and (max-width: 768px)  {
+  
+    #img_min_nav{
+      display: none;
+    }
+    #min_nav{
+      justify-content: center;
+    }
+  
+  
+  }
+  
