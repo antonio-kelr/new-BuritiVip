@@ -2,10 +2,10 @@ import axios from 'axios';
 import { useEffect, useState } from 'react'
 
 interface AuthContextType {
-  
+
 }
 
-const login = () => {
+const Login = () => {
   const [data, setData] = useState<AuthContextType[]>([]);
   useEffect(() => {
     const fetchData = async () => {
@@ -13,7 +13,8 @@ const login = () => {
         const response = await axios.get('http://localhost:3002/agendas');
         setData(response.data);
         console.log(response.data);
-        
+        console.log(data);
+
       } catch (error) {
         console.error('Erro ao buscar os dados:', error);
       }
@@ -23,11 +24,11 @@ const login = () => {
 
     return () => {
     };
-  }, []); 
+  }, []);
 
   return (
     <div>dados aqui</div>
-  ) 
+  )
 }
 
-export default login
+export default Login

@@ -3,48 +3,45 @@ import { Link } from "react-router-dom";
 
 import { InputText } from "primereact/inputtext";
 import { FloatLabel } from "primereact/floatlabel";
-import "primereact/resources/themes/saga-blue/theme.css";
-import "primereact/resources/primereact.min.css";
-import "primeicons/primeicons.css";
+import { BreadCrumb } from 'primereact/breadcrumb';
+import "./AdminLayout.css";
 
-import "./admin.css";
+const AdminLayout = () => {
+  const items = [{ label: 'Home' }];
+  const home = { icon: 'pi pi-home', url: '/admin' }
 
-const admin = () => {
   const [value, setValue] = useState("");
+
   return (
     <section>
       <div className="tables">
         <div className="data">
-          <span>Painel de dados</span>
+          <span>Painel Administrativo</span>
         </div>
         <hr className="MuiDivider-root MuiDivider-fullWidth MuiDivider-light css-6vm7vh"></hr>
         <ul>
           <li>
-            <Link className="ulpricioal" to="#">
-              Painel
+            <Link className="ulpricioal" to="/admin">
+              Home
             </Link>
           </li>
           <li>
-            <Link to="#">Tabelas</Link>
+            <Link to="/admin/agendas">Agendas</Link>
           </li>
           <li>
-            <Link to="#">Perfil</Link>
+            <Link to="/admin/agendas">Coberturas</Link>
           </li>
           <li>
-            <Link to="#">Entrar</Link>
+            <Link to="/admin/agendas">Classificados</Link>
           </li>
           <li>
-            <Link to="#">Escreva-se</Link>
+            <Link to="/">Ir para o site</Link>
           </li>
         </ul>
       </div>
       <div className="tag_separetion">
         <nav className="nav_bar">
-          <div>
-            <span className="pi pi-home" style={{ fontSize: "20px" }}>
-              / admin
-            </span>
-          </div>
+          <BreadCrumb model={items} home={home} />
           <div className="p-field">
             <FloatLabel>
               <InputText
@@ -64,4 +61,4 @@ const admin = () => {
   );
 };
 
-export default admin;
+export default AdminLayout;
