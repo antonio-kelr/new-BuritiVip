@@ -16,7 +16,7 @@ const Nav = () => {
                   </a>
                 </li>
                 <li>
-                  <a href="#AGENDA">
+                  <a href=''>
                     <FontAwesomeIcon icon={faAnglesRight} /> AGENDA
                   </a>
                 </li>

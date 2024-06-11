@@ -1,6 +1,10 @@
 * {
   font-family: sans-serif;
 }
+body {
+  background: #efeee9;
+}
+
 
 .img_header {
   position: relative;

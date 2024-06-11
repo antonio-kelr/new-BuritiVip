@@ -1,0 +1,126 @@
+section {
+  height: 50rem;
+  display: flex;
+  padding: 20px;
+  background: #f0f2f5;
+  gap: 20px;
+}
+body {
+  background: #f0f2f5;
+}
+
+.tables {
+  width: 400px;
+  height: 95vh;
+  overflow-y: auto;
+  background: #333338;
+  border-radius: 10px;
+  font-size: 18px;
+  font-family: sans-serif;
+  font-weight: 600;
+  
+
+  & ul {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    list-style: none;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  & li:nth-of-type(1) {
+    text-decoration: none;
+    padding: 15px;
+    width: 100%;
+    border-radius: 10px;
+    background: #3892ee !important;
+  }
+  & li:hover {
+    background: rgb(196, 193, 193);
+    transition: 1s;
+  }
+  & li {
+    text-decoration: none;
+    padding: 15px;
+    width: 100%;
+    border-radius: 8px;
+
+    & a {
+      color: rgb(255, 255, 255);
+      text-decoration: none;
+    }
+  }
+}
+.css-6vm7vh {
+  flex-shrink: 0;
+  border-top: 0px solid rgba(0, 0, 0, 0.08);
+  border-right: 0px solid rgba(0, 0, 0, 0.08);
+  border-left: 0px solid rgba(0, 0, 0, 0.08);
+  height: 0.0625rem;
+  margin: 1rem 0px;
+  border-bottom: none;
+  opacity: 0.25;
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0),
+    rgb(255, 255, 255),
+    rgba(255, 255, 255, 0)
+  ) !important;
+}
+.data {
+  padding: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+
+  & span {
+    color: white;
+  }
+}
+.tag_separetion {
+  width: 100%;
+}
+.nav_bar {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  z-index: 1100;
+  box-shadow: rgba(255, 255, 255, 0.9) 0rem 0rem 0.0625rem 0.0625rem inset,
+    rgba(0, 0, 0, 0.05) 0rem 1.25rem 1.6875rem 0rem;
+  backdrop-filter: saturate(200%) blur(1.875rem);
+  background-color: rgba(255, 255, 255, 0.8);
+  min-height: 4.6875rem;
+  border-radius: 0.75rem;
+}
+
+.p-field {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.buto_icone {
+  border-radius: 50%;
+  width: 1.4em;
+  height: 1.4em;
+  display: flex;
+  justify-content: center;
+  padding: 2px;
+  background: #7b809a;
+  border: none;
+}
+.pi-user {
+  color: white;
+}
+
+#search {
+  padding: 3px;
+
+
+  
+}

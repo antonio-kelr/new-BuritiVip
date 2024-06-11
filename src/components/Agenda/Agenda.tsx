@@ -1,10 +1,33 @@
-import { MouseEvent } from "react";
+import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import imgAgenda from "../../img/agenda1.png";
 import imgCarrosuel from "../../img/img-carrosuel.jpg";
+import { MouseEvent } from "react";
+import Iagenda from '../../interfaces/agendas'
 import "./Agenda.css";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
-import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 const Agenda = () => {
+  const [data, setData] = useState<Iagenda[]>([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('http://localhost:3002/agendas');
+        setData(response.data);
+        console.log(response.data);
+        
+      } catch (error) {
+        console.error('Erro ao buscar os dados:', error);
+      }
+    };
+
+    fetchData();
+
+    return () => {
+    };
+  }, []); 
+
   const handleClick = (e: MouseEvent): void => {
     const buttons: NodeListOf<HTMLButtonElement> =
       document.querySelectorAll<HTMLButtonElement>(".EntBtn");
@@ -14,8 +37,7 @@ const Agenda = () => {
 
     const button: HTMLButtonElement = e.currentTarget as HTMLButtonElement;
     button.classList.add("selecte");
-  };
-  return (
+  };  return (
     <>
       <div className="carousel slide carouselExampleIndicators">
         <div className="div-flex">
