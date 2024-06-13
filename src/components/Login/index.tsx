@@ -27,7 +27,9 @@ const Login = () => {
   }, []);
 
   return (
-    <div>dados aqui</div>
+    <>
+      <div>dados aqui</div>
+    </>
   )
 }
 

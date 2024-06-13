@@ -1,9 +1,8 @@
 import { useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 
-import { InputText } from "primereact/inputtext";
-import { FloatLabel } from "primereact/floatlabel";
 import { BreadCrumb } from "primereact/breadcrumb";
+import { InputText } from "primereact/inputtext";
 import "./AdminLayout.css";
 
 const AdminLayout = () => {
@@ -43,14 +42,13 @@ const AdminLayout = () => {
         <nav className="nav_bar">
           <BreadCrumb model={items} home={home} />
           <div className="p-field">
-            <FloatLabel>
-              <InputText
-                id="search"
-                value={value}
-                onChange={(e) => setValue(e.target.value)}
-              />
-              <label htmlFor="search">Search here</label>
-            </FloatLabel>
+            <InputText
+              id="search"
+              value={value}
+              placeholder="Pesquisar"
+              className="p-inputtext-lg"
+              onChange={(e) => setValue(e.target.value)}
+            />
             <button className="buto_icone">
               <span className="pi pi-user"></span>
             </button>

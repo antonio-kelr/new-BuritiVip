@@ -1,7 +1,8 @@
-import  { useEffect, useState } from "react";
-import { DataTable } from "primereact/datatable";
-import { Column } from "primereact/column";
 import axios from "axios";
+import { Card } from 'primereact/card';
+import { Column } from "primereact/column";
+import { DataTable } from "primereact/datatable";
+import { useEffect, useState } from "react";
 import Iagenda from "../../../../interfaces/agendas";
 
 export default function AdminAgendas() {
@@ -20,16 +21,18 @@ export default function AdminAgendas() {
     fetchData();
   }, []);
 
-  console.log("Data:", data); 
+  console.log("Data:", data);
 
   return (
     <div className="card">
-      <DataTable value={data} tableStyle={{ minWidth: "50rem" }}>
-        <Column field="id" header="id"></Column>
-        <Column field="nome" header="nome"></Column>
-        <Column field="data" header="data"></Column>
-        <Column field="descricao" header="descricao"></Column>{" "}
-      </DataTable>
+      <Card>
+        <DataTable value={data} tableStyle={{ minWidth: "50rem" }}>
+          <Column field="id" header="id"></Column>
+          <Column field="nome" header="nome"></Column>
+          <Column field="data" header="data"></Column>
+          <Column field="descricao" header="descricao"></Column>{" "}
+        </DataTable>
+      </Card>
     </div>
   );
 }
