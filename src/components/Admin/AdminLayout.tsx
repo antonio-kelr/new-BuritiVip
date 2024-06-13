@@ -1,14 +1,14 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 import { InputText } from "primereact/inputtext";
 import { FloatLabel } from "primereact/floatlabel";
-import { BreadCrumb } from 'primereact/breadcrumb';
+import { BreadCrumb } from "primereact/breadcrumb";
 import "./AdminLayout.css";
 
 const AdminLayout = () => {
-  const items = [{ label: 'Home' }];
-  const home = { icon: 'pi pi-home', url: '/admin' }
+  const items = [{ label: "Home" }];
+  const home = { icon: "pi pi-home", url: "/admin" };
 
   const [value, setValue] = useState("");
 
@@ -29,10 +29,10 @@ const AdminLayout = () => {
             <Link to="/admin/agendas">Agendas</Link>
           </li>
           <li>
-            <Link to="/admin/agendas">Coberturas</Link>
+            <Link to="/admin/coberturas">Coberturas</Link>
           </li>
           <li>
-            <Link to="/admin/agendas">Classificados</Link>
+            <Link to="/admin/classificados">Classificados</Link>
           </li>
           <li>
             <Link to="/">Ir para o site</Link>
@@ -56,6 +56,9 @@ const AdminLayout = () => {
             </button>
           </div>
         </nav>
+        <div className="upalod_componets">
+          <Outlet /> {/* Isto renderizará as rotas filhas */}
+        </div>
       </div>
     </section>
   );
