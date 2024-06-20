@@ -1,11 +1,5 @@
 import React from "react";
-interface CoberturaItem {
-  id?: number;
-  URL: string;
-  description: string;
-  date: string;
-  numeroFoto: string;
-}
+import type { CoberturaItem } from '../../interfaces/cobertura';
 
 export const fotosData: CoberturaItem[] = [
   {

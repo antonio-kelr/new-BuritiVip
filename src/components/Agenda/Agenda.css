@@ -37,7 +37,7 @@
   border: none;
 }
 .selecte {
-  /* border: 1px solid #0075ff; */
+   border: 1px solid #0075ff; 
   box-shadow: 0px 0px 10px 0px #fede28;
   background-color: #fede28e0;
 }
@@ -272,4 +272,4 @@
   .carousel-item {
     height: 100%;
   }
-}
+} 

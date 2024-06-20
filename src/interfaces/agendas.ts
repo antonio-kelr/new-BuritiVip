@@ -1,9 +1,10 @@
-
-interface Iagenda {
+ /*interface da Agendas*/ 
+export interface Iagenda {
     id: number;
     nome: string;
     data: Date;
-    descricao:string
+    descricao: string
 }
 
-export default Iagenda
+
+

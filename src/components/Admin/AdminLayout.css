@@ -1,19 +1,25 @@
 section {
-  height: 50rem;
   display: flex;
-  padding: 20px;
-  background: white;
-  gap: 20px;
+  height: 100vh;
+  padding-top: 20px;
+}
+.tag_separetion {
+  width: calc(93% - 250px);
+  margin-left: 350px;
+}
+.tables_componets {
+  height: 90%;
+  overflow: auto;
+  border-radius: 10px;
+  background-color: #2b2b2e;
 }
 .tables {
-  width: 400px;
-  height: 95vh;
-  overflow-y: auto;
-  background: #333338;
-  border-radius: 10px;
-  font-size: 18px;
-  font-family: sans-serif;
-  font-weight: 600;
+  position: fixed;
+  top: 10;
+  left: 20px;
+  width: 300px;
+  height: 100%;
+  z-index: 1000;
 
   & ul {
     display: flex;
@@ -74,24 +80,22 @@ section {
     color: white;
   }
 }
-.tag_separetion {
-  width: 100%;
-}
 .upalod_componets {
-  max-width: 1300px;
-  margin: 0 auto;
+  width: 100%;
+  padding-top: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  height: auto;
+
+  /* border: 2px solid red; */
 }
 .nav_bar {
-  padding: 10px;
+  padding: 15px;
+  padding-right: 50px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 1300px;
-  margin: 0 auto;
   box-sizing: border-box;
   z-index: 1100;
   box-shadow: rgba(255, 255, 255, 0.9) 0rem 0rem 0.0625rem 0.0625rem inset,
@@ -101,26 +105,37 @@ section {
   min-height: 4.6875rem;
   border-radius: 0.75rem;
 }
-
+.icone-right {
+  visibility: hidden;
+}
 .p-field {
   display: flex;
   align-items: center;
-  gap: 5px;
-}
-.buto_icone {
-  border-radius: 50%;
-  width: 1.4em;
-  height: 1.4em;
-  display: flex;
-  justify-content: center;
-  padding: 2px;
-  background: #7b809a;
-  border: none;
-}
-.pi-user {
-  color: white;
+  gap: 20px;
 }
 
-#search {
-  padding: 3px;
+@media screen and (max-width: 1450px) {
+  .tables {
+    width: 0;
+    transition: 0.2s;
+  }
+  .icone-right {
+    visibility: visible;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  .abri-tabela {
+    position: fixed;
+    top: 10;
+    left: 20px;
+    width: 300px;
+    height: 100%;
+    z-index: 1000;
+  }
+
+  .tag_separetion {
+    width: calc(93% );
+    margin-left: 25px;
+      padding: 10px;
+  }
 }

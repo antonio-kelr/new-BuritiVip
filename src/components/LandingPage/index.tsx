@@ -14,34 +14,10 @@ import logo from "../../img/logo.png";
 import pontoVip from "../../img/pontos-vip.png";
 import imgHeader from "../../img/web-desig.jpg";
 import youTube from "../../img/you-tube.jpg";
+import {BarsClick} from './index'
 import "./styles.css";
 
 function LandingPage() {
-  const BarsClick = () => {
-    const divMobile: HTMLElement | null = document.querySelector(".div-mobile");
-    const Xmark: HTMLElement | null = document.querySelector(".Xmark");
-
-    if (divMobile && Xmark) {
-      Xmark.addEventListener("click", () => {
-        divMobile.classList.remove("abri-menu");
-      });
-    }
-
-    if (divMobile?.classList.contains("abri-menu")) {
-      divMobile.classList.remove("abri-menu");
-    } else {
-      divMobile?.classList.add("abri-menu");
-    }
-
-    divMobile?.addEventListener("click", (event) => {
-      if (
-        event.target instanceof HTMLElement &&
-        divMobile.contains(event.target)
-      ) {
-        divMobile.classList.remove("abri-menu");
-      }
-    });
-  };
 
   return (
     <>
@@ -166,6 +142,7 @@ function LandingPage() {
           </ul>
         </nav>
       </div>
+      
       <div className="row rowSlider">
         <div className="col-5"></div>
         <div className="col collTras"></div>

@@ -1,0 +1,40 @@
+.p-datatable .p-datatable-thead > tr > th,
+.p-datatable .p-datatable-tbody > tr > td {
+
+  /*border-right: 1px solid #dcdcdc;*/ /* Define a cor e o estilo da borda */
+}
+
+/* Remove a borda direita da última coluna */
+.p-datatable .p-datatable-thead > tr > th:last-child,
+.p-datatable .p-datatable-tbody > tr > td:last-child {
+  border-right: none;
+}
+
+/* Adiciona borda inferior às células do cabeçalho */
+/* Adiciona bordas horizontais entre as colunas do cabeçalho */
+.p-datatable .p-datatable-thead > tr > th {
+  border-bottom: 1px solid #dcdcdc;
+}
+
+/* Adiciona bordas horizontais entre as colunas do corpo da tabela */
+.p-datatable .p-datatable-tbody > tr > td {
+  border-bottom: 1px solid #dcdcdc;
+}
+
+/* Adiciona uma linha extra entre as colunas, se necessário */
+.p-datatable .p-datatable-tbody > tr.middle-row > td {
+   border-bottom: 2px solid #dcdcdc; /* Define a cor e o estilo da linha */
+}
+
+.p-button-rounded {
+  padding: 15px;
+  height: 40px;
+}
+
+.card {
+  width: 100%;
+
+}
+
+@media (max-width: 1200px) {
+}

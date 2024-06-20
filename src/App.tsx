@@ -7,6 +7,7 @@ import AdminHome from "./components/Admin/pages/AdminHome";
 import Home from "./components/LandingPage/pages/Home";
 import AdminAgendas from "./components/Admin/pages/AdminAgendas";
 
+
 function App() {
   return (
     <BrowserRouter>
