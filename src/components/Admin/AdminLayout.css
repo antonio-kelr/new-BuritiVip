@@ -1,10 +1,11 @@
 section {
   display: flex;
-  height: 100vh;
+  height: auto;
+  overflow: hidden;
   padding-top: 20px;
 }
 .tag_separetion {
-  width: calc(93% - 250px);
+  width: calc(92% - 250px);
   margin-left: 350px;
 }
 .tables_componets {
@@ -114,7 +115,18 @@ section {
   gap: 20px;
 }
 
-@media screen and (max-width: 1450px) {
+@media screen and (max-width: 1446px) {
+  .tag_separetion {
+    width: calc(75%);
+    margin-left: 320px;
+    padding: 10px;
+    padding-right:35px ;
+  }
+  .tables {
+    width: 290px;
+  }
+}
+@media screen and (max-width: 1200px) {
   .tables {
     width: 0;
     transition: 0.2s;
@@ -134,8 +146,8 @@ section {
   }
 
   .tag_separetion {
-    width: calc(93% );
+    width: calc(96%);
     margin-left: 25px;
-      padding: 10px;
+    padding: 10px;
   }
 }

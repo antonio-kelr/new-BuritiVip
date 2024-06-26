@@ -1,4 +1,5 @@
 import { faAnglesRight, faXmark } from "@fortawesome/free-solid-svg-icons";
+import { BarsClick } from "./utils/index";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FaBars, FaSearch, FaThumbsUp, FaTwitter } from "react-icons/fa";
 import Agenda from "../Agenda";
@@ -14,11 +15,9 @@ import logo from "../../img/logo.png";
 import pontoVip from "../../img/pontos-vip.png";
 import imgHeader from "../../img/web-desig.jpg";
 import youTube from "../../img/you-tube.jpg";
-import {BarsClick} from './index'
 import "./styles.css";
 
 function LandingPage() {
-
   return (
     <>
       <header className="img_header">
@@ -142,7 +141,7 @@ function LandingPage() {
           </ul>
         </nav>
       </div>
-      
+
       <div className="row rowSlider">
         <div className="col-5"></div>
         <div className="col collTras"></div>
@@ -159,7 +158,6 @@ function LandingPage() {
         <Visible />
       </div>
       <Rodape />
-
     </>
   );
 }

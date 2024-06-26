@@ -2,9 +2,16 @@
 export interface Iagenda {
     id: number;
     nome: string;
-    data: Date;
+    data?: Date | null; 
     descricao: string
 }
+
+export  const initialAgenda: Iagenda = {
+    id: 0,
+    nome: "",
+    data: null,
+    descricao: "",
+  };
 
 
 

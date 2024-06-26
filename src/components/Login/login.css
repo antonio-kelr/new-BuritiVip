@@ -1,0 +1,57 @@
+.login-container {
+  border: 1px solid #d6e0e1;
+  width: 27rem;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+
+  & h1 {
+    background-image: url("../../img/praia.jpg");
+    background-size: cover;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 50px;
+    color: #046974;
+  }
+}
+.Header {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.msg_error {
+  position: absolute;
+  top: 0;
+  right: 0px;
+}
+.css-6h {
+  flex-shrink: 0;
+  border-top: 0px solid rgba(0, 0, 0, 0.08);
+  border-right: 0px solid rgba(0, 0, 0, 0.08);
+  border-left: 0px solid rgba(0, 0, 0, 0.08);
+  height: 0.0625rem;
+  margin: 1rem 0px;
+  border-bottom: none;
+  opacity: 0.25;
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0),
+    rgb(0, 0, 255),
+    /* Alterado para azul */ rgba(255, 255, 255, 0)
+  ) !important;
+}
+
+.logout {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.input_validentio {
+  border: 2px solid red;
+  width: 100%;
+}

@@ -6,6 +6,12 @@ export const APiAxios = axios.create({
     'Content-Type': 'application/json'
   }
 });
+export const usuarios = {
+  login: (credentials: { email: string, senha: string }): Promise<AxiosResponse<any>> => APiAxios.post('usuarios/entrar', credentials),
+
+};
+
+
 
 export const AgendaDados = {
   getAll: (): Promise<AxiosResponse<any>> => APiAxios.get('agendas'),

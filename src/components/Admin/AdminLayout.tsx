@@ -3,7 +3,7 @@ import { Link, Outlet } from "react-router-dom";
 
 import { BreadCrumb } from "primereact/breadcrumb";
 import { InputText } from "primereact/inputtext";
-import { AdminClick }  from './index'
+import { AdminClick }  from './utils/index'
 import "./AdminLayout.css";
 
 const AdminLayout = () => {
@@ -60,6 +60,7 @@ const AdminLayout = () => {
             <Outlet /> {/* Isto renderizará as rotas filhas */}
           </div>
         </div>
+        
       </section>
     </>
   );
