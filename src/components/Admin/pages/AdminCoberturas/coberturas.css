@@ -1,0 +1,82 @@
+.msg_infor {
+  position: absolute;
+  top: 20px;
+  right: 0px;
+}
+.custom-class {
+  width: 0;
+  visibility: hidden;
+  transition: 0.2;
+}
+.custom-class2 {
+  width: 0;
+  visibility: hidden;
+  transition: 0.2;
+}
+.progresso_Sniper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+.class_imagen {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  height: auto;
+}
+.class_imagens {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+}
+.fileuploads {
+    border: 2px solid red;
+
+  z-index: 9999999;
+}
+.image-gallery {
+  display: flex;
+  padding-left: 60px;
+  padding-right: 40px;
+  flex-direction: column;
+  overflow: auto;
+  gap: 7px;
+
+  & div {
+    border: 2px solid rgb(218, 209, 209);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 10px;
+
+  }
+}
+.cards {
+  border:  2PX solid red;
+  width: 100%;
+}
+.editnone {
+  display: none;
+}
+.image-item {
+  display: flex;
+  align-items: center;
+
+}
+.butoDelete {
+  background: red;
+  color: white;
+  padding: 6px;
+  font-size: 20px;
+  border: none;
+  border-radius: 2px;
+}

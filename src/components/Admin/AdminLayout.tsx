@@ -3,7 +3,7 @@ import { Link, Outlet } from "react-router-dom";
 
 import { BreadCrumb } from "primereact/breadcrumb";
 import { InputText } from "primereact/inputtext";
-import { AdminClick }  from './utils/index'
+import { AdminClick } from "./utils/index";
 import "./AdminLayout.css";
 
 const AdminLayout = () => {
@@ -39,6 +39,7 @@ const AdminLayout = () => {
               <li>
                 <Link to="/">Ir para o site</Link>
               </li>
+              <li className="Logout">Logout</li>
             </ul>
           </div>
         </div>
@@ -53,14 +54,16 @@ const AdminLayout = () => {
                 className="p-inputtext-lg"
                 onChange={(e) => setValue(e.target.value)}
               />
-              <span className="icone-right pi pi-align-right" onClick={AdminClick}></span>
+              <span
+                className="icone-right pi pi-align-right"
+                onClick={AdminClick}
+              ></span>
             </div>
           </nav>
           <div className="upalod_componets">
             <Outlet /> {/* Isto renderizará as rotas filhas */}
           </div>
         </div>
-        
       </section>
     </>
   );

@@ -221,7 +221,12 @@
   .img_item {
     height: 85%;
   }
-
+  .buttoes_re {
+    gap: 0px;
+    padding: 0;
+    bottom: 2px;  
+  }
+  
   .concert_content {
     & img {
       width: 145px;
@@ -268,7 +273,7 @@
   }
 
   .img_items {
-    width: 100%;
+    width: 100% !important;
   }
 
   .img_item div {
@@ -312,6 +317,23 @@
       }
     }
   }
+  .buttoes_re {
+    display: flex;
+    gap: 10px;
+    padding-right: 10px;
+    position: absolute;
+    bottom: 10px;
+    right: 0;
+  
+    & button {
+      padding: 15px;
+      padding-top: 0;
+      padding-bottom: 0;
+      border-radius: 10px;
+      font-weight: 600;
+    }
+  }
+  
 }
 @media screen and (max-width: 768px) {
   .anucio_cat {

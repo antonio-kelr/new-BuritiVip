@@ -38,6 +38,13 @@ section {
     border-radius: 10px;
     background: #3892ee !important;
   }
+  & li:nth-of-type(6) {
+    text-decoration: none;
+    padding: 15px;
+    width: 100%;
+    border-radius: 10px;
+    background: #c74036 !important;
+  }
   & li:hover {
     background: rgb(196, 193, 193);
     transition: 1s;
@@ -89,7 +96,13 @@ section {
   align-items: center;
   height: auto;
 
-  /* border: 2px solid red; */
+  border: 2px solid red;
+}
+.Logout {
+  margin-top: 200px;
+  background: rgb(206, 66, 66);
+  color: white;
+  cursor: pointer;
 }
 .nav_bar {
   padding: 15px;
@@ -120,7 +133,7 @@ section {
     width: calc(75%);
     margin-left: 320px;
     padding: 10px;
-    padding-right:35px ;
+    padding-right: 35px;
   }
   .tables {
     width: 290px;

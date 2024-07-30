@@ -7,6 +7,7 @@ import AdminHome from "./components/Admin/pages/AdminHome";
 import Home from "./components/LandingPage/pages/Home";
 import Login from './components/Login/login';
 import AdminAgendas from "./components/Admin/pages/AdminAgendas";
+import AdminCobeturas from "./components/Admin/pages/AdminCoberturas/cobertura";
 import TokenDeacesso from "./components/Login/token";
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
           <Route element={<AdminLayout />}>
             <Route index element={<AdminHome />} />
             <Route path="agendas" element={<AdminAgendas />} />
+            <Route path="coberturas" element={<AdminCobeturas />} />
           </Route>
         </Route>
         <Route path="*" element={<NotFound />} />

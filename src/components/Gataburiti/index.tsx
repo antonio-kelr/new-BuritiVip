@@ -8,7 +8,7 @@ import "./GataBuritiVip.css";
 const GataBuritiVip = () => {
   return (
     <div className="row-gatas">
-      <div className="col-3 img_items">
+      <div className="col-3 img_items whidt">
         <div className="noti_PLus concert_content dj_img">
           <h3>TOP DJ</h3>
           <img src={imgauzte} alt="" />

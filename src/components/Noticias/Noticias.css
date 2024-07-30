@@ -303,7 +303,7 @@
 
 @media screen and (max-width: 997px) {
   .not {
-    width: 100%;
+    width: 100% !important;
   }
   .Caoud_classf {
     & img {

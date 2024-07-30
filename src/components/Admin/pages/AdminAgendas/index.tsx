@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { Iagenda } from "../../../../interfaces/agendas";
 import { Button } from "primereact/button";
 import { Dialog } from "primereact/dialog";
-import moment from 'moment'
+import moment from "moment";
 import { InputText } from "primereact/inputtext";
 import { Calendar } from "primereact/calendar";
 import { AgendaDados } from "../../../../servers/apiAxio";
@@ -16,7 +16,9 @@ export default function AdminAgendas() {
   const [data, setData] = useState<Iagenda[]>([]);
   const [loading, setLoading] = useState(true);
   const [editDialog, setEditDialog] = useState(false);
-  const [agendaatualizada, setAgendaatualizada] = useState<Iagenda | null>(null);
+  const [agendaatualizada, setAgendaatualizada] = useState<Iagenda | null>(
+    null
+  );
   const [newAgendaDialog, setNewAgendaDialog] = useState(false);
   const [novaAgenda, setNovaAgenda] = useState<Iagenda>({
     id: 0,
@@ -79,28 +81,26 @@ export default function AdminAgendas() {
     setNewAgendaDialog(true);
   };
 
-
   const saveNewAgenda = async () => {
     try {
       console.log("Dados da nova agenda a serem salvos:", novaAgenda);
-      
+
       const response = await AgendaDados.create({
         nome: novaAgenda.nome,
         data: novaAgenda.data,
         descricao: novaAgenda.descricao,
       });
-      
+
       console.log("Resposta da API após salvar nova agenda:", response);
-  
+
       setData([...data, response.data]); // Adiciona a nova agenda à lista
       setNewAgendaDialog(false);
+      document.location.reload();
     } catch (error) {
       console.error("Erro ao criar nova agenda:", error);
     }
   };
 
-  
-  
   const botoesAcaoes = (rowData: Iagenda) => {
     return (
       <div>
@@ -119,25 +119,39 @@ export default function AdminAgendas() {
       </div>
     );
   };
+  const header = (
+    <div className="flex flex-wrap align-items-center justify-content-between gap-2">
+      <span className="text-xl text-900 font-bold">Agendas</span>
+      <div className="new_botao">
+        <Button
+          label="New"
+          icon="pi pi-book"
+          className="new_agenda p-button-rounded p-button-success mr-2"
+          onClick={openNewAgendaDialog}
+        />
+      </div>
+    </div>
+  );
+
+  const footer = `In total there are ${data ? data.length : 0} dados.`;
 
   return (
     <>
       <div className="card">
-        <div className="new_botao">
-          <Button
-            label="New"
-            icon="pi pi-book"
-            className="new_agenda p-button-rounded p-button-success mr-2"
-            onClick={openNewAgendaDialog}
-          />
-        </div>
-
         <Card>
           {!loading && (
-            <DataTable value={data} tableStyle={{ minWidth: "80rem" }}>
+            <DataTable
+              value={data}
+              footer={footer}
+              header={header}
+            >
               <Column field="id" header="ID" />
               <Column field="nome" header="Nome" />
-              <Column field="data" header="Data" body={(rowData)=> moment(rowData.data).format('DD/MM/YYYY') } />
+              <Column
+                field="data"
+                header="Data"
+                body={(rowData) => moment(rowData.data).format("DD/MM/YYYY")}
+              />
               <Column field="descricao" header="Descrição" />
               <Column body={botoesAcaoes} header="Ações" />
             </DataTable>
@@ -168,9 +182,7 @@ export default function AdminAgendas() {
             <Calendar
               id="data"
               value={novaAgenda.data ? new Date(novaAgenda.data) : null}
-              onChange={(e) =>
-                setNovaAgenda({ ...novaAgenda, data: e.value })
-              }
+              onChange={(e) => setNovaAgenda({ ...novaAgenda, data: e.value })}
               showIcon
             />
           </div>
@@ -185,11 +197,7 @@ export default function AdminAgendas() {
             />
           </div>
           <div className="p-field">
-            <Button
-              label="Salvar"
-              icon="pi pi-check"
-              onClick={saveNewAgenda}
-            />
+            <Button label="Salvar" icon="pi pi-check" onClick={saveNewAgenda} />
           </div>
         </div>
       </Dialog>
@@ -220,7 +228,9 @@ export default function AdminAgendas() {
               <label htmlFor="data">Data</label>
               <Calendar
                 id="data"
-                value={agendaatualizada.data ? new Date(agendaatualizada.data) : null}
+                value={
+                  agendaatualizada.data ? new Date(agendaatualizada.data) : null
+                }
                 onChange={(e) =>
                   setAgendaatualizada({ ...agendaatualizada, data: e.value })
                 }
