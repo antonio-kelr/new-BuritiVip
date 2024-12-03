@@ -9,7 +9,7 @@ const Rodape = () => {
         <nav className="nav_footer">
           <ul>
             <li>
-              <a href="#"></a>INICAL
+              <a href=""></a>INICAL
             </li>
             <li>
               <a href="#"></a>QUEM SOMOS

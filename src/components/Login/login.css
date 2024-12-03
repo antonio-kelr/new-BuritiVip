@@ -1,57 +1,82 @@
 .login-container {
-  border: 1px solid #d6e0e1;
-  width: 27rem;
   display: flex;
-  flex-direction: column;
-  padding: 10px;
+  width: 90%;
+  max-width: 960px;
+  padding: 0px;
 
-  & h1 {
-    background-image: url("../../img/praia.jpg");
-    background-size: cover;
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-    background-clip: text;
-    margin-bottom: 20px;
-    text-align: center;
-    font-weight: bolder;
-    font-size: 50px;
-    color: #046974;
-  }
+  background-color: #09090b;
+  border-radius: 1.5rem;
 }
-.Header {
+
+.container_login {
   height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-.msg_error {
-  position: absolute;
-  top: 0;
-  right: 0px;
-}
-.css-6h {
-  flex-shrink: 0;
-  border-top: 0px solid rgba(0, 0, 0, 0.08);
-  border-right: 0px solid rgba(0, 0, 0, 0.08);
-  border-left: 0px solid rgba(0, 0, 0, 0.08);
-  height: 0.0625rem;
-  margin: 1rem 0px;
-  border-bottom: none;
-  opacity: 0.25;
-  background-image: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 0),
-    rgb(0, 0, 255),
-    /* Alterado para azul */ rgba(255, 255, 255, 0)
-  ) !important;
+  background: linear-gradient(to right, #1b1b1e, #202023, #242427);
 }
 
-.logout {
-  width: 100%;
-  margin-bottom: 20px;
+.login-form {
+  display: block;
+  padding: 2.5rem;
+  color: white;
+  width: 50%;
 }
 
-.input_validentio {
-  border: 2px solid red;
+.form_login {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.login-form h1 {
+  margin: 3rem 0;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-family: DM Sans, sans-serif;
+}
+
+.login-form label {
+  height: 4rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.login-form input {
   width: 100%;
+  border: none;
+  height: 2.5rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  outline: none;
+  color: white;
+  background-color: #27272a;
+}
+.login-input:focus {
+  border: linear-gradient(to right, #4158d0, #c850c0, #ffcc70);
+  border: border-box;
+  border: content-box, border-box;
+}
+.login-picture {
+  width: 0;
+  flex-basis: 67.33%;
+  background-size: cover;
+  --tw-shadow: inset 400px 30px 400px -100px #09090b;
+  --tw-shadow-colored: inset 400px 30px 400px -100px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.gradient-background {
+  background: linear-gradient(to right, #4158d0, #c850c0, #ffcc70);
+  border-radius: 0.5rem;
+  padding: 5px;
+}
+
+.transition-opacity {
+  transition-opacity: ease-in;
 }

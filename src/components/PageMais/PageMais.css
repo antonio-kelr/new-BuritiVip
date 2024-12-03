@@ -1,0 +1,9 @@
+.landepage_mais {
+    display: flex;
+    min-height: 500px;
+    height: auto;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+
+}

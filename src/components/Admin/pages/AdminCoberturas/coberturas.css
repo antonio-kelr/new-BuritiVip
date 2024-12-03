@@ -8,11 +8,6 @@
   visibility: hidden;
   transition: 0.2;
 }
-.custom-class2 {
-  width: 0;
-  visibility: hidden;
-  transition: 0.2;
-}
 .progresso_Sniper {
   display: flex;
   align-items: center;
@@ -38,11 +33,6 @@
   transform: translate(-50%, -50%);
   width: 80%;
 }
-.fileuploads {
-    border: 2px solid red;
-
-  z-index: 9999999;
-}
 .image-gallery {
   display: flex;
   padding-left: 60px;
@@ -57,26 +47,33 @@
     align-items: center;
     justify-content: space-between;
     padding-right: 10px;
-
   }
 }
 .cards {
-  border:  2PX solid red;
   width: 100%;
-}
-.editnone {
-  display: none;
 }
 .image-item {
   display: flex;
-  align-items: center;
+  margin-bottom: 5px;
 
+  align-items: center;
+}
+.image-item:hover {
+  background: #cccccc79;
+  transition: 0.2s;
 }
 .butoDelete {
+  position: absolute;
+  right: 10px;
   background: red;
   color: white;
   padding: 6px;
-  font-size: 20px;
+  font-size: 19px;
   border: none;
   border-radius: 2px;
+}
+.EditImagems {
+  padding: 5px;
+  position: relative;
+  border: 2px solid rgba(190, 184, 184, 0.575);
 }

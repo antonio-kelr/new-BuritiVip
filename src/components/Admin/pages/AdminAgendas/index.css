@@ -1,17 +1,14 @@
-Remove
-  a
-  borda
-  direita
-  da
-  última
-  coluna
   .p-datatable
   .p-datatable-thead
   > tr
   > th:last-child,
 .p-datatable .p-datatable-tbody > tr > td:last-child {
-  border-right: none;
   
+}
+.imagem_agenda {
+  width: 105px;
+  border-radius: 5px;
+  height: 105px;
 }
 
 /* Adiciona borda inferior às células do cabeçalho */

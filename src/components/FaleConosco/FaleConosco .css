@@ -1,0 +1,91 @@
+.container_faleconosco {
+  width: 100%;
+  background: linear-gradient();
+  height: 100vh;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+
+  background: linear-gradient(to bottom, #000000, #0d0f0d) !important;
+  animation: epicEntry 1.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+.title {
+  font-size: 20px;
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  color: white;
+}
+.bItNhe {
+  height: 4px;
+  width: 100%;
+  overflow: hidden;
+  border: none;
+  background-image: linear-gradient(
+    to right,
+    rgb(255, 255, 74) 0px,
+    rgb(252, 208, 0) 4%,
+    rgb(255, 193, 18) 8%,
+    rgb(255, 193, 18) 11%,
+    rgb(255, 138, 0) 16%,
+    rgb(255, 95, 95) 22%,
+    rgb(255, 37, 58) 28%,
+    rgb(255, 55, 168) 37%,
+    rgb(199, 57, 255) 49%,
+    rgb(164, 0, 225) 56%,
+    rgb(46, 206, 255) 72%,
+    rgb(0, 134, 255) 80%,
+    rgb(114, 247, 114) 94%,
+    rgb(0, 214, 4)
+  );
+}
+.butao_Enviar {
+  width: 100%;
+}
+.icone_faleconosco {
+  margin-left: 5px;
+}
+.campoInput {
+  width: 450px;
+  margin-top: 10px;
+  padding-left: 25px;
+}
+.campoInput:nth-child(1) {
+  margin-bottom: 15px;
+}
+
+.form {
+  padding: 20px;
+  box-shadow: 5px 5px 5px 5px rgb(185, 190, 178);
+  /* animation: epicEntry 1.5s cubic-bezier(0.68, -0.55, 0.27, 1.55); */
+}
+@keyframes epicEntry {
+  0% {
+    transform: translateX(-100%) scale(0.5); /* Começa fora da tela à esquerda com um zoom menor */
+    opacity: 0; /* Transparente no início */
+  }
+  50% {
+    transform: translateX(10%) scale(1.1); /* Vai para uma posição à direita com leve zoom para dar efeito de elasticidade */
+    opacity: 0.5; /* Começa a aparecer */
+  }
+  100% {
+    transform: translateX(0) scale(1); /* Volta para a posição original e tamanho natural */
+    opacity: 1; /* Totalmente visível */
+  }
+}
+@media screen and (max-width: 420px) {
+  .campoInput {
+    width: 300px;
+  }
+}
+@media screen and (max-width: 350px) {
+  .campoInput {
+    width: auto;
+  }
+  .butao_Enviar {
+    width: 100%;
+  }
+  .campoInput:nth-child(1) {
+    width: 220px;
+  }
+}

@@ -11,18 +11,29 @@ import { Calendar } from "primereact/calendar";
 import { AgendaDados } from "../../../../servers/apiAxio";
 
 import "./index.css";
+import { FileUpload, FileUploadSelectEvent } from "primereact/fileupload";
+import axios from "axios";
+import { InputTextarea } from "primereact/inputtextarea";
+import { FloatLabel } from "primereact/floatlabel";
 
 export default function AdminAgendas() {
   const [data, setData] = useState<Iagenda[]>([]);
   const [loading, setLoading] = useState(true);
+
   const [editDialog, setEditDialog] = useState(false);
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
+  const [selectedEditFile, setSelectedEditFile] = useState<File | null>(null);
+  const [noticiaId, setNoticiaId] = useState(0);
   const [agendaatualizada, setAgendaatualizada] = useState<Iagenda | null>(
+
     null
   );
   const [newAgendaDialog, setNewAgendaDialog] = useState(false);
   const [novaAgenda, setNovaAgenda] = useState<Iagenda>({
     id: 0,
     nome: "",
+    url: "",
+    slug: "",
     data: null,
     descricao: "",
   });
@@ -42,6 +53,11 @@ export default function AdminAgendas() {
     fetchData();
   }, []);
 
+  useEffect(() => {
+    if (noticiaId !== 0) {
+    }
+  }, [noticiaId]);
+
   const deleteagendatable = async (rowData: Iagenda) => {
     try {
       await AgendaDados.delete(rowData.id);
@@ -54,64 +70,157 @@ export default function AdminAgendas() {
 
   const handleeditar = (rowData: Iagenda) => {
     setAgendaatualizada({ ...rowData });
+    setNoticiaId(rowData.id);
+
     setEditDialog(true);
   };
 
-  const saveUpdate = async () => {
-    console.log("Dados a serem salvos:", agendaatualizada);
+  const handleFileUpload = (event: FileUploadSelectEvent) => {
+    if (event.files && event.files[0]) {
+      console.log("arquivo aqui", event.files);
 
-    if (agendaatualizada) {
-      try {
-        await AgendaDados.update(agendaatualizada.id, agendaatualizada);
-        setData((prevData) =>
-          prevData.map((item) =>
-            item.id === agendaatualizada.id ? agendaatualizada : item
-          )
-        );
-        setEditDialog(false);
-        console.log("Item atualizado:", agendaatualizada);
-      } catch (error) {
-        console.error("Erro ao atualizar o item:", error);
-      }
+      setSelectedFile(event.files[0]);
+    }
+  };
+
+  const editaNoticias = (event: FileUploadSelectEvent) => {
+    if (event.files && event.files[0]) {
+      console.log("arquivo aqui", event.files);
+
+      setSelectedEditFile(event.files[0]);
     }
   };
 
   const openNewAgendaDialog = () => {
-    setNovaAgenda({ id: 0, nome: "", data: null, descricao: "" });
+    setNovaAgenda({
+      id: 0,
+      nome: "",
+      data: null,
+      url: "",
+      slug: "",
+      descricao: "",
+    });
     setNewAgendaDialog(true);
   };
 
   const saveNewAgenda = async () => {
     try {
-      console.log("Dados da nova agenda a serem salvos:", novaAgenda);
+      const formData = new FormData();
+      formData.append("nome", novaAgenda.nome);
+      formData.append(
+        "data",
+        novaAgenda.data ? novaAgenda.data.toISOString() : ""
+      );
+      formData.append("descricao", novaAgenda.descricao);
 
-      const response = await AgendaDados.create({
-        nome: novaAgenda.nome,
-        data: novaAgenda.data,
-        descricao: novaAgenda.descricao,
-      });
+      if (selectedFile) {
+        formData.append("imagen", selectedFile);
+      }
+
+      const response = await AgendaDados.create(formData);
+      setNewAgendaDialog(false);
 
       console.log("Resposta da API após salvar nova agenda:", response);
 
-      setData([...data, response.data]); // Adiciona a nova agenda à lista
-      setNewAgendaDialog(false);
       document.location.reload();
+      setData([...data, response.data]);
     } catch (error) {
       console.error("Erro ao criar nova agenda:", error);
     }
   };
 
-  const botoesAcaoes = (rowData: Iagenda) => {
+  const saveUpdate = async () => {
+    console.log("arquivos aqui", selectedEditFile);
+    console.log("noticia atualizada aqui", agendaatualizada);
+
+    // Verifica se há uma notícia para editar
+    if (!agendaatualizada) {
+      console.error("Notícia não está disponível para edição.");
+      return;
+    }
+
+    // Verifica se todos os campos obrigatórios estão preenchidos
+    if (
+      !agendaatualizada.nome ||
+      !agendaatualizada.data ||
+      !agendaatualizada.descricao
+    ) {
+      console.error("Todos os campos obrigatórios devem ser preenchidos.");
+      return;
+    }
+
+    const datas =
+      agendaatualizada.data instanceof Date
+        ? agendaatualizada.data
+        : new Date(agendaatualizada.data);
+
+    // Cria um novo FormData para enviar os dados
+    const formData = new FormData();
+    formData.append("nome", agendaatualizada.nome);
+    formData.append("data", datas.toISOString());
+    formData.append("descricao", agendaatualizada.descricao);
+
+    // Adiciona o arquivo se selecionado
+    if (selectedEditFile) {
+      formData.append("imagen", selectedEditFile);
+    }
+
+    try {
+      // Atualiza a notícia no backend
+      console.log("dados aqui", formData);
+      const response = await AgendaDados.update(agendaatualizada.id, formData);
+
+      // Atualiza o estado da tabela com a notícia editada
+      document.location.reload();
+
+      setData((prevData) =>
+        prevData.map((item) =>
+          item.id === agendaatualizada.id ? response.data : item
+        )
+      );
+      setEditDialog(false);
+    } catch (error) {
+      if (axios.isAxiosError(error)) {
+        console.error("Erro ao atualizar recado:", {
+          message: error.message,
+          response: error.response?.data,
+          status: error.response?.status,
+          headers: error.response?.headers,
+        });
+      }
+    }
+  };
+
+  const imageTemplate = (rowData: Iagenda) => {
     return (
       <div>
+        {rowData.url ? (
+          <img
+            src={rowData.url}
+            alt="Imagem"
+            className="imagem_agenda"
+            onError={(e) => {
+              (e.target as HTMLImageElement).src = "path/to/fallback-image.jpg";
+            }}
+          />
+        ) : (
+          <p>No image available</p>
+        )}
+      </div>
+    );
+  };
+
+  const botoesAcaoes = (rowData: Iagenda) => {
+    return (
+      <div style={{ display: "flex" }}>
         <Button
-          label="Edit"
+          label="Editar"
           icon="pi pi-refresh"
           className="p-button-rounded p-button-success mr-2"
           onClick={() => handleeditar(rowData)}
         />
         <Button
-          label="Delete"
+          label="Deletar"
           icon="pi pi-trash"
           className="p-button-rounded p-button-danger"
           onClick={() => deleteagendatable(rowData)}
@@ -124,7 +233,7 @@ export default function AdminAgendas() {
       <span className="text-xl text-900 font-bold">Agendas</span>
       <div className="new_botao">
         <Button
-          label="New"
+          label="Nova"
           icon="pi pi-book"
           className="new_agenda p-button-rounded p-button-success mr-2"
           onClick={openNewAgendaDialog}
@@ -133,20 +242,17 @@ export default function AdminAgendas() {
     </div>
   );
 
-  const footer = `In total there are ${data ? data.length : 0} dados.`;
+  const footer = `No total existem ${data ? data.length : 0} dados.`;
 
   return (
     <>
       <div className="card">
         <Card>
           {!loading && (
-            <DataTable
-              value={data}
-              footer={footer}
-              header={header}
-            >
-              <Column field="id" header="ID" />
+            <DataTable value={data} footer={footer} header={header}>
               <Column field="nome" header="Nome" />
+              <Column header="Imagem" body={imageTemplate}></Column>
+
               <Column
                 field="data"
                 header="Data"
@@ -188,14 +294,36 @@ export default function AdminAgendas() {
           </div>
           <div className="p-field">
             <label htmlFor="descricao">Descrição</label>
-            <InputText
-              id="descricao"
-              value={novaAgenda.descricao}
-              onChange={(e) =>
-                setNovaAgenda({ ...novaAgenda, descricao: e.target.value })
+            <FloatLabel>
+              <InputTextarea
+                variant="filled"
+                value={novaAgenda.descricao}
+                onChange={(e) =>
+                  setNovaAgenda({ ...novaAgenda, descricao: e.target.value })
+                }
+                rows={5}
+                cols={30}
+              />{" "}
+            </FloatLabel>
+          </div>
+
+          <div className="p-field upldImg">
+            <FileUpload
+              className="Upaloads"
+              name="imagem"
+              customUpload
+              multiple
+              accept="image/*"
+              maxFileSize={2000000}
+              onSelect={handleFileUpload}
+              emptyTemplate={
+                <p className="m-0">
+                  Arraste e solte arquivos aqui para fazer o upload.
+                </p>
               }
             />
           </div>
+
           <div className="p-field">
             <Button label="Salvar" icon="pi pi-check" onClick={saveNewAgenda} />
           </div>
@@ -239,17 +367,57 @@ export default function AdminAgendas() {
             </div>
             <div className="p-field">
               <label htmlFor="descricao">Descrição</label>
-              <InputText
-                id="descricao"
-                value={agendaatualizada.descricao}
-                onChange={(e) =>
-                  setAgendaatualizada({
-                    ...agendaatualizada,
-                    descricao: e.target.value,
-                  })
-                }
-              />
+              <FloatLabel>
+                <InputTextarea
+                  variant="filled"
+                  value={agendaatualizada.descricao}
+                  onChange={(e) =>
+                    setAgendaatualizada({
+                      ...agendaatualizada,
+                      descricao: e.target.value,
+                    })
+                  }
+                  rows={5}
+                  cols={30}
+                />{" "}
+              </FloatLabel>
             </div>
+
+            <div className="upload">
+              <div className="p-field">
+                <FileUpload
+                  className="Upaloads"
+                  name="imagem"
+                  customUpload
+                  multiple={false}
+                  accept="image/*"
+                  maxFileSize={2000000}
+                  onSelect={editaNoticias}
+                  emptyTemplate={
+                    <p className="m-0">
+                      Arraste e solte arquivos aqui para fazer o upload.
+                    </p>
+                  }
+                />
+              </div>
+              {agendaatualizada.url && (
+                <div
+                  className="imagen_noticia"
+                  style={{ marginBottom: "10px" }}
+                >
+                  <img
+                    src={agendaatualizada.url}
+                    style={{
+                      maxWidth: "105px",
+                      maxHeight: "105px",
+                      borderRadius: "5px",
+                    }}
+                    alt="Imagem da Notícia"
+                  />
+                </div>
+              )}
+            </div>
+
             <div className="p-field">
               <Button label="Salvar" icon="pi pi-check" onClick={saveUpdate} />
             </div>

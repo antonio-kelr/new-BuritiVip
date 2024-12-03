@@ -1,0 +1,124 @@
+.recados_container {
+  width: 100%;
+  background: white;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+.sention_recados {
+  padding-top: 0;
+  margin-bottom: 15px;
+}
+.recado_container {
+  height: auto;
+  position: relative;
+}
+.Rowdados {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.nav_recados {
+  background: #f2f2f2;
+  width: 100%;
+  padding: 6px;
+}
+.nav_recados ul {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  margin: 0;
+  gap: 7px;
+  padding: 0px 15px;
+}
+.nav_recados li,
+a {
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  color: #212529;
+
+  text-decoration: none;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+
+  align-items: center;
+}
+
+.recados_Lista {
+  display: flex;
+  border: 1px solid #e0e0e0;
+  flex-direction: column;
+  width: 100%;
+ margin-bottom: 10px;
+}
+
+
+.title_recados {
+  width: 100%;
+  background: #f1f1ef;
+  color: #3b455a;
+  font-family: sans-serif;
+  font-weight: bolder;
+  padding: 5px 15px;
+}
+
+.recados_Lista div {
+  cursor: pointer;
+  padding: 5px 15px;
+  box-shadow: 0 -7px 0px -6px #dfe1e0;
+  background: white;
+}
+.recados_anteriores div {
+  cursor: pointer;
+  padding: 5px 15px;
+  box-shadow: 0 -7px 0px -6px #dfe1e0;
+  background: white;
+}
+.recados_Lista div span:nth-child(2) {
+  color: #d0735c;
+  font-size: 17px;
+  font-weight: bolder;
+}
+.recados_anteriores div span:nth-child(2) {
+  color: #d0735c;
+  font-size: 17px;
+  font-weight: bolder;
+}
+.recados_anteriores div span {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.recados_Lista div span {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.detalhe_dados_recados {
+  padding-left: 10px;
+}
+.descrition_recado {
+  margin-top: 30px;
+  max-width: 500px;
+  color: #d0735c;
+  font-weight: bold;
+}
+.icon_recados {
+  padding-top: 0;
+  width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .Rowdados {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  
+}
+@media screen and (max-width: 370px) {
+  .menstios_noticia {
+    padding: 0px 5px;
+    gap: 3px;
+  }
+  .contagem_recados {
+    display: none;
+  }
+}

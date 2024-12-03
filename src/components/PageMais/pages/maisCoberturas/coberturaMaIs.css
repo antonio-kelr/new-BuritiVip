@@ -1,0 +1,379 @@
+.custom-datatable .p-datatable-tbody > tr > td {
+  border: 1px solid rgba(175, 172, 172, 0.411);
+
+  padding: 25px;
+}
+
+.cobertura {
+  position: relative;
+  margin-top: 20px;
+
+  & img {
+    width: 100%;
+    height: 60px;
+  }
+
+  & span {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    color: #a24102;
+    font-weight: bold;
+    font-size: clamp(20px, 2.7vw, 24px);
+    font-family: sans-serif;
+  }
+}
+
+.card_cobertura {
+  width: 100%;
+  margin-bottom: 20px;
+  
+}
+
+.cobertura_wrap {
+  border: 1px solid rgba(175, 172, 172, 0.411);
+  background: #f5f5f5;
+  margin-bottom: 20px;
+  
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 233px);
+  grid-gap: 20px !important;
+  justify-content: center;
+}
+
+.cobertura_Imagem {
+  display: flex;
+  
+  padding-left: 5px;
+  position: relative;
+  flex-direction: column;
+  width: 220px !important;
+  align-items: center;
+  cursor: pointer;
+
+  & img {
+    width: 100%;
+  }
+}
+.cobertura_Imagem:hover {
+  background: linear-gradient(to bottom, #ff8583, #ffe173) !important;
+}
+.cobertura_Imagem {
+  box-shadow: 0px 1px 8px 0px #dad9d7;
+}
+.description {
+  width: 190px;
+  height: 100px;
+  margin-bottom: 10px;
+}
+.rowDato {
+  width: 190px;
+  position: absolute;
+  bottom: 0px;
+}
+
+.img_cobertura {
+  height: 450px;
+  width: 70px;
+  margin-bottom: 10px;
+}
+
+.coberturas_img {
+  height: 110px;
+  width: 170px;
+}
+
+.p-galleria-thumbnail-item {
+  opacity: 1;
+}
+.p-galleria-thumbnail-item {
+  display: flex;
+  flex-direction: column;
+  margin: 2px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.p-galleria-thumbnail-container {
+  margin-top: 10px;
+  background: #f7f7f7;
+  padding: 3px;
+  gap: 10px;
+  
+  border: 3px solid #dfdfdf;
+  & svg {
+    color: #878787;
+  }
+}
+.container_Imagen {
+  border: 3px solid #dfdfdf;
+  padding: 8px;
+  width: 100%;
+}
+.cintainer_gallery {
+  padding: 15px;
+  display: flex;
+  gap: 25px;
+}
+.card_gallery nav {
+  margin-bottom: 20px;
+  box-shadow: 0px 3px 0px 0px #dad9d7;
+  padding: 5px;
+
+  & ul {
+    margin: 0;
+    padding: 0;
+    padding-left: 20px;
+    gap: 7px;
+    display: flex;
+    align-items: center;
+    list-style: none;
+
+    & i {
+      display: flex;
+      align-items: center;
+    }
+  }
+  & li,
+  a {
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    color: #212529;
+
+    text-decoration: none;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+
+    align-items: center;
+  }
+}
+.card_gallery header {
+  box-shadow: 0px 3px 0px 0px #dad9d7;
+  & h1 {
+    padding-left: 35px;
+    color: #b0484c;
+  }
+
+  & div {
+    padding-left: 35px;
+    display: flex;
+    gap: 50px;
+    margin-bottom: 5px;
+  }
+}
+
+.Galleria {
+  width: 70%;
+}
+
+.cobertura_detalhes {
+    width: 40%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background-image: url("../../../../img/web-desig-2.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.cobertura_card {
+  padding: 0;
+}
+.cobertura_card img {
+  padding: 8px;
+  padding-left: 8px;
+  width: 100%;
+  height: 150px;
+}
+.p-galleria-thumbnail-container {
+  margin-top: 10px !important;
+  
+  
+}
+
+.cobertura_detalhes div {
+    height: 150px; /* Aumente a altura do último item */
+  background: white;
+}
+
+.cobertura_detalhes div:last-child {
+  background: #bbbbbb;
+  height: 295px; /* Aumente a altura do último item */
+}
+.p-galleria-thumbnail-next-icon,
+.p-galleria-thumbnail-prev-icon {
+  width: 50px;
+  height: 50px;
+}
+
+.mentions-Images {
+  margin: 0px 15px;
+  display: flex;
+  align-items: center;
+
+  justify-content: space-between;
+}
+
+.icon-container {
+  display: flex;
+  
+  align-items: center;
+  gap: 10px;
+}
+.icon-container span:nth-child(2),
+.icon-container span:nth-child(4) {
+  border: 2px solid #c9cbc7;
+  padding: 0px 5px 0px;
+}
+.icon-container span:nth-child(5) {
+  border: 2px solid #c9cbc7;
+  background: #f6805a;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  gap: 5px;
+
+  & i {
+    background: white;
+    color: #c5745c;
+    height: 15px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .cobertura_detalhes {
+    display: none;
+  }
+  .cobertura_Imagem {
+    width: 100% !important;
+  }
+  .cobertura_card img {
+    padding: 8px;
+    padding-left: 8px;
+    width: 100%;
+    height: 150px;
+  }
+
+  .cobertura_wrap {
+    padding: 20px;
+    grid-template-columns: repeat(auto-fill, 260px);
+
+    grid-gap: 50px !important;
+  }
+  .rowDato {
+    left: 20px;
+  }
+
+  .description {
+    width: 220px;
+    height: 100px;
+    margin-bottom: 5px;
+  }
+
+  .Galleria {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .mentions-Images {
+    margin: 0px 0px;
+    display: flex;
+    gap: 5px;
+    flex-direction: column-reverse;
+  }
+  .cobertura_Imagem {
+    width: 100% !important;
+  }
+  .cobertura_wrap {
+    grid-gap: 30px !important;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 300px);
+  }
+  .cobertura_card img {
+    height: 200px;
+  }
+  .description {
+    width: 260px;
+    height: 100px;
+    margin-bottom: 5px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .coberturas_img {
+    height: 100px;
+    width: 100px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .contagem {
+    display: none;
+  }
+  .cintainer_gallery {
+    padding: 0px;
+    display: flex;
+    gap: 25px;
+  }
+  .card_gallery header {
+    & h1 {
+      padding-left: 5px;
+    }
+
+    & div {
+      padding-left: 5px;
+      gap: 30px;
+      margin-bottom: 5px;
+    }
+  }
+  .card_gallery header nav {
+    margin-bottom: 10px;
+  }
+  .card_gallery header nav ul {
+    padding-left: 5px;
+    gap: 0px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .cobertura_Imagem {
+    width: 100% !important;
+  }
+  .cobertura_wrap {
+    grid-gap: 30px !important;
+    display: flex;
+    flex-direction: column;
+  }
+  .description {
+    width: 100%;
+    padding-left: 5px;
+  }
+  .rowDato {
+    left: 5px;
+  }
+}
+@media screen and (max-width: 300px) {
+  .card_gallery header nav ul {
+    display: none;
+  }
+  .icon-container {
+    display: none;
+  }
+  .card_gallery header {
+    & h1 {
+      padding-left: 5px;
+    }
+
+    & div {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+}

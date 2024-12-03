@@ -3,6 +3,7 @@ import imgDAvid from "../../img/david.jpg";
 import imgauzte from "../../img/desig-5.png";
 import imgBolha from "../../img/msg-desig-4.png";
 import imgGata from "../../img/photo-gata.jpg";
+import Recados from "./Recados";
 import "./GataBuritiVip.css";
 
 const GataBuritiVip = () => {
@@ -75,48 +76,7 @@ const GataBuritiVip = () => {
           </div>
         </div>
       </div>
-
-      <div className="col img_items recados">
-        <div className="noti_PLus concert_content  img_rec">
-          <h3>RECADOS</h3>
-          <img src={imgauzte} alt="" />
-
-          <div className="link_not concert">
-            <a href="">
-              <i>
-                <FaPlus />
-              </i>
-              <span> mais recados</span>
-            </a>
-          </div>
-        </div>
-        <div className="David">
-          <div className="seta_re">
-            <span>DE:</span>
-            <h3>Helton ALves</h3>
-          </div>
-          <div className="seta_re">
-            <span>PARA:</span>
-            <h3>Daniel SOusa</h3>
-          </div>
-
-          <div className="arrow_re">
-            <div>
-              <h3
-                dangerouslySetInnerHTML={{
-                  __html:
-                    "Jan adoreiiiiii seu programa de hoje (Paradão ser -tanejo),no estilo(FORRONEJO), muiiiiito bom, con- tagio legal, tá ai que seria muito bom ter um pro- grama nesse formato,fazer essas 2junções,esses 2ritmos num só programa. Valeuuuuuuuu,nota mil pra vc,bjooos!!",
-                }}
-              />
-            </div>
-
-            <div className="buttoes_re">
-              <button>ler todos</button>
-              <button>enviar recados</button>
-            </div>
-          </div>
-        </div>
-      </div>
+      <Recados></Recados>
     </div>
   );
 };

@@ -17,32 +17,32 @@ const Nav = () => {
                   </Link>
                 </li>
                 <li>
-                  <a href="#COBERTUA">
+                  <a href='/coberturas'>
                     <FontAwesomeIcon icon={faAnglesRight} /> COBERTURAS
                   </a>
                 </li>
                 <li>
-                  <a href=''>
+                  <a href='/agendas'>
                     <FontAwesomeIcon icon={faAnglesRight} /> AGENDA
                   </a>
                 </li>
                 <li>
-                  <a href="#">
-                    <FontAwesomeIcon icon={faAnglesRight} /> PROMOÇÕES
+                  <a href="/noticias">
+                    <FontAwesomeIcon icon={faAnglesRight} /> NOTICIAS
                   </a>
                 </li>
                 <li>
-                  <a href="#recados">
+                  <a href='/recados'>
                     <FontAwesomeIcon icon={faAnglesRight} /> RECADOS
                   </a>
                 </li>
                 <li>
-                  <a href="#">
+                  <a href='/classificados'>
                     <FontAwesomeIcon icon={faAnglesRight} /> ANUCIE
                   </a>
                 </li>
                 <li>
-                  <a href="#">
+                  <a href="/faleconosco">
                     <FontAwesomeIcon icon={faAnglesRight} /> FALE CONOSCO
                   </a>
                 </li>

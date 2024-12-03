@@ -9,15 +9,19 @@ import GataBuritiVip from "../Gataburiti";
 import Nav from "../Nav";
 import Noticias from "../Noticias";
 import Rodape from "../Rodape";
-import Visible from "../Visible";
+import Visible from "../pageAnucios";
 import fecebook from "../../img/fecebokk.png";
 import logo from "../../img/logo.png";
 import pontoVip from "../../img/pontos-vip.png";
 import imgHeader from "../../img/web-desig.jpg";
 import youTube from "../../img/you-tube.jpg";
 import "./styles.css";
+import { PageMais } from "../PageMais/PageMais";
+import { Link, Outlet, useLocation } from "react-router-dom";
+import Pageanucios from "../pageAnucios2";
 
 function LandingPage() {
+  const location = useLocation();
   return (
     <>
       <header className="img_header">
@@ -109,12 +113,12 @@ function LandingPage() {
         <nav className="nav_mobile">
           <ul>
             <li>
-              <a href="#COBERTUA">
+              <Link to="">
                 <FontAwesomeIcon icon={faAnglesRight} /> COBERTURAS
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#AGENDA">
+              <a href="">
                 <FontAwesomeIcon icon={faAnglesRight} /> AGENDA
               </a>
             </li>
@@ -124,7 +128,7 @@ function LandingPage() {
               </a>
             </li>
             <li>
-              <a href="#recados">
+              <a href="">
                 <FontAwesomeIcon icon={faAnglesRight} /> RECADOS
               </a>
             </li>
@@ -147,16 +151,20 @@ function LandingPage() {
         <div className="col collTras"></div>
       </div>
 
+      {/* Verifica se está na rota "mais" */}
       <div className="container contNet">
-        <Nav />
-        <Agenda />
-        <Coberturas />
-        <Anucio />
-        <Noticias />
-        <Visible />
-        <GataBuritiVip />
-        <Visible />
+        <>
+          <Nav />
+          <Agenda />
+          <Coberturas />
+          <Anucio />
+          <Noticias />
+          <Visible />
+          <GataBuritiVip />
+          <Pageanucios />
+        </>
       </div>
+
       <Rodape />
     </>
   );

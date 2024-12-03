@@ -1,16 +1,24 @@
 import { useState } from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Link, Navigate, Outlet } from "react-router-dom";
 
 import { BreadCrumb } from "primereact/breadcrumb";
 import { InputText } from "primereact/inputtext";
 import { AdminClick } from "./utils/index";
 import "./AdminLayout.css";
+import { Button } from "primereact/button";
 
 const AdminLayout = () => {
   const items = [{ label: "Home" }];
   const home = { icon: "pi pi-home", url: "/admin" };
 
   const [value, setValue] = useState("");
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("userId");
+    <Navigate to="/admin/login" />;
+    document.location.reload();
+
+  };
 
   return (
     <>
@@ -23,23 +31,53 @@ const AdminLayout = () => {
             <hr className="MuiDivider-root MuiDivider-fullWidth MuiDivider-light css-6vm7vh"></hr>
             <ul>
               <li>
-                <Link className="ulpricioal" to="/admin">
+                <Link className="ulpricioal redr" to="/admin">
                   Home
                 </Link>
               </li>
               <li>
-                <Link to="/admin/agendas">Agendas</Link>
+                <Link className="redr" to="/admin/banners">
+                Banners
+                </Link>
               </li>
               <li>
-                <Link to="/admin/coberturas">Coberturas</Link>
+                <Link className="redr" to="/admin/anucios">
+                Anucios
+                </Link>
               </li>
               <li>
-                <Link to="/admin/classificados">Classificados</Link>
+                <Link className="redr" to="/admin/agendas">
+                  Agendas
+                </Link>
               </li>
               <li>
-                <Link to="/">Ir para o site</Link>
+                <Link className="redr" to="/admin/coberturas">
+                  Coberturas
+                </Link>
               </li>
-              <li className="Logout">Logout</li>
+              <li>
+                <Link className="redr" to="/admin/Classificados">
+                  Classificados
+                </Link>
+              </li>
+              <li>
+                <Link className="redr" to="/admin/recados">
+                  Recados
+                </Link>
+              </li>
+              <li>
+                <Link className="redr" to="/admin/noticias">
+                  Noticias
+                </Link>
+              </li>
+              <li>
+                <Link className="redr" to="/">
+                  Ir para o site
+                </Link>
+              </li>
+              <li className="Logout">
+                <Button onClick={handleLogout} label="Logout" />
+              </li>
             </ul>
           </div>
         </div>

@@ -1,0 +1,38 @@
+.action-buttons {
+  display: flex;
+}
+
+
+.ImgUpdate {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+.Img_classificado {
+  border: 1px solid #DAD6D6;
+  width: 100%;
+  
+  padding: 5px;
+}
+
+.image-classificado {
+  display: flex;
+  justify-content: space-between;
+  padding: 2px;
+  align-items: center;
+
+}
+.image-classificado:hover {
+  background: #cccccc79;
+  transition: 0.2s;
+  
+}
+
+.buto_delete {
+  height: 35px;
+  width: 35px;
+  background: #FF0000;
+  border: none;
+  color: wheat;
+}
+

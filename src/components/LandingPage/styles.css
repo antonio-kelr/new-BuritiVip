@@ -226,9 +226,6 @@
     padding-right: 20px;
     padding-right: 11px;
   }
-  .nav_uls ul::before {
-    width: 98%;
-  }
 }
 
 @media screen and (max-width: 1200px) {

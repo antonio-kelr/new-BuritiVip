@@ -1,0 +1,18 @@
+
+
+.imagen_noticia {
+    display: flex;
+    justify-content: space-between;
+    align-items:center ;
+    padding: 5px;
+    margin-top: 10px;
+    border: 1px solid #DAD6D6;
+
+}
+
+.p-button-noticia {
+    height: 35px;
+    width: 35px;
+    background: #FF0000;
+    border: none;
+}
